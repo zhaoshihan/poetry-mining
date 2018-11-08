@@ -4,7 +4,7 @@
 
 这个项目尝试使用一些文本特征分析的方法，对21000+首宋词进行数据分析。
 
-本项目是为了完成商务智能课程的最后作业，说明文档详见introduction.md，以下文档内容尊重原作者的格式不变。
+本项目是为了完成商务智能课程的最后作业，说明文档详见[introduction.md](https://github.com/zhaoshihan/poetry-mining/blob/master/introduction.md)，以下文档内容尊重原作者的格式不变。
 
 秉承fork源代码的开源精神，这里一切代码供学习之用，全部公开
 
