@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import random
 
@@ -96,91 +97,91 @@ plot_vectors(tf_idf_vector_list, poet_list, 'tf_idf')
 plot_vectors(w2v_vector_list, poet_list, 'w2v')
 
 draw_compared_plot(["苏轼", "辛弃疾", "贺铸", "陈亮", "张元干", "刘过"], "豪放派")
-# draw_compared_plot(["柳永", "张先", "晏殊", "欧阳修", "秦观", "李清照"], "婉约派")
-# draw_compared_plot(["黄庭坚", "秦观", "晁补之", "张耒"], "苏门四学士")
-# draw_compared_plot(["周邦彦", "姜夔", "吴文英", "张炎", "王沂孙"], "格律派诗人")
-# draw_compared_plot(["晏殊", "晏几道", "欧阳修", "黄庭坚"], "江西词派")
-#
-# print('统计分析')
-# print('-----------------')
-# print('统计了%s位词人的%s首词' % (len(result.poet_counter.keys()), sum(result.poet_counter.values())))
-# print("写作数量排名：")
-# most_productive_poets = result.poet_counter.most_common(DISPLAY_COUNT)
-# show_counter(most_productive_poets)
-#
-# print("最常用的非单字词：")
-# cnt = 0
-# most_frequent_words = []
-# for word, count in result.word_counter.most_common():
-#     if cnt >= WORD_COULD_COUNT:
-#         break
-#     if len(word) > 1:
-#         most_frequent_words.append((word, count))
-#         cnt += 1
-# show_counter(most_frequent_words[:DISPLAY_COUNT])
-#
-# most_frequent_word_dict = {}
-# for word in most_frequent_words:
-#     most_frequent_word_dict[word[0]] = word[1]
-#
-# show_wordcloud(most_frequent_word_dict, '全宋词词云')
-#
-# print("最常用的名词：")
-# most_common_nouns = result.word_property_counter_dict[WordType.NOUN].most_common(DISPLAY_COUNT)
-# show_counter(most_common_nouns)
-#
-# print("最常用的地名：")
-# show_counter(result.word_property_counter_dict[WordType.PLACE].most_common(DISPLAY_COUNT))
-#
-# print("最常用的形容词：")
-# show_counter(result.word_property_counter_dict[WordType.ADJ].most_common(DISPLAY_COUNT))
-#
-# print("最常用的连词：")
-# show_counter(result.word_property_counter_dict[WordType.CONJ].most_common(DISPLAY_COUNT))
-#
-# print("最常用的数词：")
-# show_counter(result.word_property_counter_dict[WordType.NUM].most_common(DISPLAY_COUNT))
-#
-# print("最常用的介词：")
-# show_counter(result.word_property_counter_dict[WordType.PREP].most_common(DISPLAY_COUNT))
-#
-# print("最常用的动词：")
-# show_counter(result.word_property_counter_dict[WordType.VERB].most_common(DISPLAY_COUNT))
-#
-# print("**基于词向量的分析")
-# for word in list(most_common_nouns):
-#     print("与 %s 相关的词：" % word[0])
-#     show_counter(analyzer.find_similar_word(word[0]))
-#
-# # 个人喜爱的一些词人的数据分析
-# for poet_name in FAVORITE_POETS_LIST:
-#     print("与 %s 用词相近的诗人：" % poet_name)
-#     print("tf-idf标准： %s" % analyzer.find_similar_poet(poet_name))
-#     print("word2vector标准： %s\n" % analyzer.find_similar_poet(poet_name, use_w2v=True))
-#     print("%s 最常用的词牌统计:" % poet_name)
-#     show_counter(result.poet_cipai_counter[poet_name].most_common(DISPLAY_COUNT))
-#
-#     cnt = 0
-#     most_frequent_words = []
-#     for word, count in result.poet_word_counter[poet_name].most_common():
-#         if cnt >= WORD_COULD_COUNT:
-#             break
-#         if len(word) > 1:
-#             most_frequent_words.append((word, count))
-#             cnt += 1
-#     most_frequent_word_dict = {}
-#     for word in most_frequent_words:
-#         most_frequent_word_dict[word[0]] = word[1]
-#
-#     # show_wordcloud(most_frequent_word_dict, poet_name)
-#
-# # 聚类分析
-# cluster = KMeans(n_clusters=2, random_state=0)
-# labels = cluster.fit_predict(tf_idf_vector_dimension_list)
-#
-# for i in range(2):
-#     print('--Group {}----'.format(i + 1))
-#     for j in range(len(labels)):
-#         if i == labels[j]:
-#             print(poet_list[j])
+draw_compared_plot(["柳永", "张先", "晏殊", "欧阳修", "秦观", "李清照"], "婉约派")
+draw_compared_plot(["黄庭坚", "秦观", "晁补之", "张耒"], "苏门四学士")
+draw_compared_plot(["周邦彦", "姜夔", "吴文英", "张炎", "王沂孙"], "格律派诗人")
+draw_compared_plot(["晏殊", "晏几道", "欧阳修", "黄庭坚"], "江西词派")
+
+print('统计分析')
+print('-----------------')
+print('统计了%s位词人的%s首词' % (len(result.poet_counter.keys()), sum(result.poet_counter.values())))
+print("写作数量排名：")
+most_productive_poets = result.poet_counter.most_common(DISPLAY_COUNT)
+show_counter(most_productive_poets)
+
+print("最常用的非单字词：")
+cnt = 0
+most_frequent_words = []
+for word, count in result.word_counter.most_common():
+    if cnt >= WORD_COULD_COUNT:
+        break
+    if len(word) > 1:
+        most_frequent_words.append((word, count))
+        cnt += 1
+show_counter(most_frequent_words[:DISPLAY_COUNT])
+
+most_frequent_word_dict = {}
+for word in most_frequent_words:
+    most_frequent_word_dict[word[0]] = word[1]
+
+show_wordcloud(most_frequent_word_dict, '全宋词词云')
+
+print("最常用的名词：")
+most_common_nouns = result.word_property_counter_dict[WordType.NOUN].most_common(DISPLAY_COUNT)
+show_counter(most_common_nouns)
+
+print("最常用的地名：")
+show_counter(result.word_property_counter_dict[WordType.PLACE].most_common(DISPLAY_COUNT))
+
+print("最常用的形容词：")
+show_counter(result.word_property_counter_dict[WordType.ADJ].most_common(DISPLAY_COUNT))
+
+print("最常用的连词：")
+show_counter(result.word_property_counter_dict[WordType.CONJ].most_common(DISPLAY_COUNT))
+
+print("最常用的数词：")
+show_counter(result.word_property_counter_dict[WordType.NUM].most_common(DISPLAY_COUNT))
+
+print("最常用的介词：")
+show_counter(result.word_property_counter_dict[WordType.PREP].most_common(DISPLAY_COUNT))
+
+print("最常用的动词：")
+show_counter(result.word_property_counter_dict[WordType.VERB].most_common(DISPLAY_COUNT))
+
+print("**基于词向量的分析")
+for word in list(most_common_nouns):
+    print("与 %s 相关的词：" % word[0])
+    show_counter(analyzer.find_similar_word(word[0]))
+
+# 个人喜爱的一些词人的数据分析
+for poet_name in FAVORITE_POETS_LIST:
+    print("与 %s 用词相近的诗人：" % poet_name)
+    print("tf-idf标准： %s" % analyzer.find_similar_poet(poet_name))
+    print("word2vector标准： %s\n" % analyzer.find_similar_poet(poet_name, use_w2v=True))
+    print("%s 最常用的词牌统计:" % poet_name)
+    show_counter(result.poet_cipai_counter[poet_name].most_common(DISPLAY_COUNT))
+
+    cnt = 0
+    most_frequent_words = []
+    for word, count in result.poet_word_counter[poet_name].most_common():
+        if cnt >= WORD_COULD_COUNT:
+            break
+        if len(word) > 1:
+            most_frequent_words.append((word, count))
+            cnt += 1
+    most_frequent_word_dict = {}
+    for word in most_frequent_words:
+        most_frequent_word_dict[word[0]] = word[1]
+
+    # show_wordcloud(most_frequent_word_dict, poet_name)
+
+# 聚类分析
+cluster = KMeans(n_clusters=2, random_state=0)
+labels = cluster.fit_predict(tf_idf_vector_dimension_list)
+
+for i in range(2):
+    print('--Group {}----'.format(i + 1))
+    for j in range(len(labels)):
+        if i == labels[j]:
+            print(poet_list[j])
 
